@@ -1,30 +1,9 @@
 import shuffle from 'lodash.shuffle'
 import difference from 'lodash.difference'
 import { TimeOutException } from './TimeOutException'
+import { Pair } from './models/pair'
 
 const FIVE_HUNDRED_MILLISECONDS = 500
-
-interface ExternalData {
-  teamMembers: string[]
-  excludedTeamMembers: string[]
-  excludedPairs: Pair[]
-}
-const external: ExternalData = {
-  teamMembers: [
-    'Jared',
-    'Eric',
-    'Andrew',
-    'Emily',
-    'Thanh',
-    'Satish',
-    'Martin',
-    'John',
-  ],
-  excludedTeamMembers: ['Andrew'],
-  excludedPairs: [['Jared', 'John']],
-}
-
-type Pair = [string, string]
 
 export const generatePairs = (
   teamMembers: string[],
@@ -68,9 +47,3 @@ const getRandomPairs = (
   }
   return pairs
 }
-
-generatePairs(
-  external.teamMembers,
-  external.excludedTeamMembers,
-  external.excludedPairs
-)

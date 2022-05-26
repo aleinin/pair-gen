@@ -28,9 +28,7 @@ export const combinations = (numberOfItems: number, sizeOfSample: number) => {
 const isCombinatoriallyEquivalent = (
   comboOne: string[],
   comboTwo: string[]
-): boolean => {
-  return difference(comboOne, comboTwo).length === 0
-}
+): boolean => difference(comboOne, comboTwo).length === 0
 
 export const isValidCombinations = (combinations: string[][]): boolean => {
   let index = 0
